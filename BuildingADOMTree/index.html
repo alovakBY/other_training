@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+
+<body>
+
+
+
+
+
+	<script>
+		const arr = ["html", [
+			["head", [
+				["title", "Hello, mockinterview"],
+			]],
+			["body", { class: "container" }, [
+				["h1", { class: "header" }, "html builder example"],
+				["div", [
+					["span", "span text2"],
+					["span", "span text3"],
+				]]
+			]]
+		]];
+		let str = ""
+		function buildHtml(arr) {
+			for (let i = 0; i < arr.length; i++) {
+				if (i === 0 && typeof arr[i] === "string") {
+					if (!Array.isArray(arr[i + 1]) && typeof (arr[i + 1]) === "object") {
+						str += `<${arr[i]} class="${arr[i + 1].class}">`
+					} else {
+						str += `<${arr[i]}>`
+					}
+				}
+				if (Array.isArray(arr[i])) {
+					buildHtml(arr[i])
+				} else if (i !== 0 && typeof arr[i] === "string") {
+					str += `${arr[i]}`
+				}
+				if (arr.length === 1) break
+				if (i === arr.length - 1 && typeof arr[0] === "string") {
+					str += `</${arr[0]}>`
+				}
+			}
+			return str
+		}
+
+		console.log(buildHtml(arr))
+	</script>
+</body>
+
+</html>
