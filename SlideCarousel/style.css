@@ -1,0 +1,106 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0 auto;
+}
+
+.container {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 200px;
+  height: 100px;
+  perspective: 200px;
+}
+
+.arrows--left {
+  color: white;
+  text-align: center;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: black;
+  bottom: -80px;
+  left: 0;
+  cursor: pointer;
+}
+
+.arrows--right {
+  color: white;
+  text-align: center;
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background-color: black;
+  bottom: -80px;
+  right: 0;
+  cursor: pointer;
+}
+
+.car {
+  width: inherit;
+  height: inherit;
+  transform-style: preserve-3d;
+  transform: rotateX(0deg);
+}
+
+.red {
+  background-color: rgb(250, 90, 90);
+}
+
+.blue {
+  background-color: rgb(110, 110, 255);
+}
+
+.green {
+  background-color: rgb(131, 255, 131);
+}
+
+.yellow {
+  background-color: rgb(255, 255, 107);
+}
+
+.black {
+  background-color: rgb(37, 37, 37);
+}
+
+.aqua {
+  background-color: aqua;
+}
+
+.slide {
+  border-radius: 20px;
+  position: absolute;
+  width: inherit;
+  height: inherit;
+  opacity: 0;
+  text-align: center;
+  transition: transform 0.3s linear;
+  overflow: hidden;
+}
+
+.activ {
+  transform: translateZ(100px);
+  opacity: 1;
+}
+
+.left {
+  transform: translateX(-200px) translateZ(75px) rotateY(-15deg);
+  opacity: 0.8;
+}
+
+.right {
+  transform: translateX(200px) translateZ(75px) rotateY(15deg);
+  opacity: 0.8;
+}
+
+img {
+  object-fit: cover;
+}
