@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<body>
+
+
+
+<script type="text/javascript" charset="utf-8">
+  "use strict"
+
+  const arr = [1,2,3,4,5,0,0,0,0,0]
+  
+  
+  function getArrRepeat(arr) {
+    return arr
+    .join("")
+    .repeat(2)
+    .split("")
+    .filter((e) => {
+      return (e !== "0")
+    })
+    .sort((a,b) =>{
+      return a-b
+    })
+  }
+  
+  console.log(getArrRepeat(arr))
+  
+</script>
+</body>
+
+</html>

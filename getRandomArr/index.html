@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<body>
+
+<script type="text/javascript" charset="utf-8">
+"use strict";
+/* Реализовать функцию так, чтобы она возвращала массив в 100 элементов, заполненный случайными натуральными числами от 1 до 200, так, чтобы они не повторялись. */
+
+function getRandomArr () {
+  const arr = []
+  for ( ;arr.length <100; ) {
+    const a = (Math.floor(Math.random()*200)+1)
+    if (arr.every( e => e !== a)) {
+      arr.push(a)
+    }
+  }
+  return arr
+}
+console.log(getRandomArr())
+  
+  
+  
+</script>
+</body>
+
+</html>

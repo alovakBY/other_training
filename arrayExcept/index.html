@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<body>
+
+
+<script type="text/javascript" charset="utf-8">
+  "use strict"
+  /* 
+  расширьте прототип/класс Array функцией, возвращающей все элементы этого массива, кроме тех, у которых индексы переданы в параметре. Функция должна принимать массив либо одно целое число.
+  */
+  const array = ["a", "b", "c", "d", "e"]
+  
+  Array.prototype.arrayExcept = function (data) {
+    const newArr = [...this]
+    if (typeof data === "number") {
+      newArr.splice(data,1)
+      return newArr
+    } else if (Array.isArray(data)) {
+      data.reverse()
+      data.forEach((e) =>{
+        newArr.splice(e,1)
+      })
+      return newArr
+    } else {
+      return this
+    }
+  }
+  
+  console.log(array.arrayExcept([1,3]))
+  console.log(array.arrayExcept(1))
+  
+  
+</script>
+</body>
+
+</html>
