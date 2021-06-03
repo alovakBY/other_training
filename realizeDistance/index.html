@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<body>
+
+
+
+<script type="text/javascript" charset="utf-8">
+  "use strict"
+  /*
+   В функцию realizeDistance передается дистанция, которую должен проехать человек, вторым параметром передается дистанция, после которой необходимо сделать остановку. Необходимо вывести лог всего пути.
+  */
+  function realizeDistance(dis, stopA) {
+    let a = Math.floor(dis/stopA)
+    if (a < 1) {
+      console.log("Вы проехали "+dis+" метров и добрались до точки.")
+    } else {
+      for (let i = 0; i < a; i++) {
+        console.log("Остановка номер "+(i+1)+". Вы проехали "+stopA*(i+1)+" метров.")
+      }
+      console.log("Вы проехали ещё"+(dis - a*stopA)+" метров и доехали до точки.")
+    }
+  }
+  
+  realizeDistance(100,150)
+  realizeDistance(1000,300)
+</script>
+</body>
+
+</html>
