@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<body>
+
+
+
+
+
+<script type="text/javascript" charset="utf-8">
+  "use strict"
+  
+  /*
+
+Напишите функцию, которая объединяет два массива, поочередно выбирая элементы
+из каждого массива. Массивы могут иметь разную длину.
+*/
+
+function mergeArrays(a, b) {
+  const arr = []
+
+  const c = Math.max(a.length,b.length)
+  for (let i = 0; i < c; i++) {
+    arr.push(a[i])
+    arr.push(b[i])
+  }
+  return arr.filter((e)=> {
+    return e !== undefined
+  })
+}
+
+// [1, "a", 2, "b", 3, "c", 4, "d", 5, "e", 6, 7, 8]
+console.log(mergeArrays([1, 2, 3, 4, 5, 6, 7, 8], ['a', 'b', 'c', 'd', 'e']));
+
+// [1, 'a', 2, 'b', 3, 'c', 'd', 'e', 'f']
+console.log(mergeArrays([1, 2, 3], ['a', 'b', 'c', 'd', 'e', 'f']));
+
+  
+</script>
+</body>
+
+</html>

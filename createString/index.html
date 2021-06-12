@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<body>
+
+
+<script type="text/javascript" charset="utf-8">
+  "use stricr"
+  
+  /*
+Необходимо реализовать функцию createString, она принимает первым аргументом 
+разделитель строк, следующие аргументы - сами строки, необходимо вернуть единую 
+строку, в которой бы стояли все переданные строки, между которыми стоял бы 
+разделитель.
+*/
+
+function createString() {
+  let str = ""
+  for (let i= 1; i < arguments.length; i++) {
+    if(i === arguments.length -1) {
+      str += arguments[i]
+    } else {
+      str += arguments[i] + arguments[0]
+    }
+  }
+  return str
+}
+
+console.log(createString('*', '55', 'привет', 'убубубу')); // 55*привет*Убубубу
+</script>
+</body>
+
+</html>

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<body>
+
+
+
+<script type="text/javascript" charset="utf-8">
+  "use strict"
+  /* 
+  Задача генерации случайного постфикса.
+  На вход получаем значение, для которого нужно сгенерировать постфикс. Если
+  постфикс уже запрашивался ранее - возвращаем его.
+  Если нет - генерируем строку заданной длины, с заданным префиксом. В качестве
+  рандомных символов могут быть буквы латинского алфавита в малом регистре и цифры.
+  */
+
+function genRandomPostfix(prefix, num) {
+  const obj = {};
+  return function (postfix) {
+    let a = prefix
+  for(let i = 0; i < num; i++) {
+    const arr = []
+    const letterRandom = String.fromCharCode(Math.floor(Math.random()*(122-97+1)+97))
+    const numberRandom = String.fromCharCode(Math.floor(Math.random()*(57-48+1)+48))
+    arr.push(letterRandom)
+    arr.push(numberRandom)
+    a += arr[Math.floor(Math.random()*2)]
+  }
+  
+   if  
+   (Object.keys(obj).every(e => e !== postfix))
+   { obj[postfix] = a
+     return obj[postfix] 
+   } else {
+     return obj[postfix]
+   }
+  }
+}
+
+const getRandomString = genRandomPostfix("_prefix_", 4)
+
+//const getRandomString = genRandomPostfix('_prefix_', 4);
+
+//_prefix_ag6t - это пример, последние 4 цифры могут быть любые
+console.log(getRandomString('568u'));
+
+//_prefix_56po  - это пример, последние 4 цифры могут быть любые
+console.log(getRandomString('1iuo'));
+
+// _prefix_ag6t - это пример, последние 4 цифры могут быть любые, но должно
+// совпадать с первым console.log
+console.log(getRandomString('568u'));
+
+</script>
+</body>
+
+</html>

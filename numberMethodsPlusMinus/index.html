@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<body>
+
+
+<script type="text/javascript" charset="utf-8">
+  "use strict"
+  
+  /*
+Реализовать методы, которые в процессе выполнения строки (2).plus(3).minus(1) 
+дали бы на выходе 4.
+*/
+
+Number.prototype.plus = function(numb) {
+  return this + numb
+}
+
+Number.prototype.minus = function(numb) {
+  return this - numb
+}
+
+console.log((2).plus(3).minus(1)); // 4
+</script>
+</body>
+
+</html>

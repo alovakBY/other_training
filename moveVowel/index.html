@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<body>
+
+
+
+<script type="text/javascript" charset="utf-8">
+  "use strict"
+  
+  /*
+Прислал Volodya Xurshudyan
+
+Учитывая строку в качестве входных данных, переместите все ее гласные
+(a, e, i, o, u, y) в конец строки в том же порядке
+*/
+
+function moveVowel(input) {
+  const strVowel = "aeiouy"
+  let str = ""
+  const arrInput = input.split("")
+  arrInput.forEach(e => {
+    if(strVowel.indexOf(e) === -1) {
+      str += e
+    }
+  })
+  arrInput.forEach(e => {
+    if (strVowel.indexOf(e) !== -1) {
+      str += e
+    }
+  })
+  return str
+}
+
+console.log(moveVowel("day"));   // "day"
+console.log(moveVowel("apple")); // "pplae"
+console.log(moveVowel("peace")); // "pceae"
+</script>
+</body>
+
+</html>

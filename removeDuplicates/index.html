@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<body>
+
+
+
+<script type="text/javascript" charset="utf-8">
+  "use strict"
+  
+  /*
+Реализовать функцию removeDuplicates, куда передается массив со строками.
+Необходимо реализовать функцию так, чтобы она возвращала новый массив с 
+теми же строками, в том же порядке, из которого убраны все дубликаты.
+Set и Map использовать запрещено.
+Примечание: массив может быть большого размера.
+*/
+
+function removeDuplicates(arr) {
+  const obj = arr.reduce((acc,el)=> {
+    if (acc[el]) {
+      acc[el]+=1
+    } else {
+      acc[el]= 1
+    }
+    return acc
+  },{})
+ return Object.keys(obj)
+}
+
+console.log(
+  removeDuplicates([
+    "string",
+    "3",
+    "0",
+    "string",
+    "string",
+    "number",
+    "number",
+    "3",
+    "constructor",
+    "0"
+  ])
+); // ["string", "3", "0", "number", "constructor"]
+
+</script>
+</body>
+
+</html>

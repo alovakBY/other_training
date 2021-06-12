@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<body>
+
+
+
+<script type="text/javascript" charset="utf-8">
+  /*
+  Подсчитайте количество вхождений каждого символа и верните его в виде списка
+массивов в порядке появления. Для пустого вывода верните пустой список.
+*/
+
+function orderedCount(text) {
+const obj = text
+    .split("")
+    .reduce((acc,el) => {
+      if(!acc[el]) {
+        acc[el] = 1
+      } else {
+        acc[el]++
+      }
+      return acc
+    }, {})
+    return Object.entries(obj)
+  }
+  
+
+// [['a', 5], ['b', 2], ['r', 2], ['c', 1], ['d', 1]]
+console.log(orderedCount("abracadabra"));
+
+// [['2', 2], ['3', 3], ['1', 1 ]]
+console.log(orderedCount('233312'));
+  
+</script>
+</body>
+
+</html>
