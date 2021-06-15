@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title></title>
+</head>
+
+<body>
+<script type="text/javascript" charset="utf-8">
+  "use strict"
+  
+  /*
+Прислал Dmitriy Zhukov, задача с реального собеседования.
+
+Задача про футбол.
+Две команды, А и Б, играют в футбол. Некто делает свою 
+ставку на результат матча, например "1:2".
+По окончании матча становится известен настоящий счет, и
+нам надо выдать тот или иной приз. Если некто угалад
+точный счет - он получает большой приз. Если некто угадал
+исход матча (выигрыш той или иной команды, или же
+ничью) - он получает маленький приз. Если же он не угадал 
+- он получает нулевой приз.
+Необходимо написать функцию на вашем любимом языке 
+программирования, которая принимает в качестве
+аргументов предполагаемый счет и реальный счет, и 
+возвращает целое число 0, 1 или 2(нулевой, маленький или 
+большой приз).
+*/
+
+function getPrize(realScore, guessScore) {
+  const guessScoreArr = guessScore.split(":")
+  const realScoreArr = realScore.split(":")
+  if (guessScoreArr[0] === realScoreArr[0] && guessScoreArr[1] === realScoreArr[1] && guessScoreArr[0] !== guessScoreArr[1]) return 2
+  if (guessScoreArr[0] === guessScoreArr[1] && guessScoreArr[0] === realScoreArr[0]) return 1
+  const guessScoreMax = Math.max(...guessScoreArr).toString()
+  const realScoreMax = Math.max(...realScoreArr).toString() 
+  if (guessScoreArr.indexOf(guessScoreMax) === realScoreArr.indexOf(realScoreMax) && guessScoreArr[0] !== guessScoreArr[1] &&
+  realScoreArr[0] !== realScoreArr[1]) return 1
+  return 0
+}
+
+console.log(getPrize('1:2', '1:2')); // 2
+console.log(getPrize('2:1', '5:0')); // 1
+console.log(getPrize('3:0', '2:2')); // 0
+console.log(getPrize("3:3", "4:2")); // 0
+console.log(getPrize("4:3", "2:2")); // 0
+</script>
+
+</body>
+
+</html>
